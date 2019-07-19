@@ -1,0 +1,14 @@
+<div class="main">
+        <h1>Edit Product</h1>
+        <form (submit)="onUpdate(updatedProduct._id,updatedProduct)">
+            <div><label for="title">Title<input class="form-control" type="text" [(ngModel)]="updatedProduct.title" name = "updatedProduct.title"></label></div>
+            <div><label for="price">Price<input class="form-control" type="text" [(ngModel)]="updatedProduct.price" name = "updatedProduct.price"></label></div>
+            <div><label for="imageUrl">Image url<input class="form-control" type="text" [(ngModel)]="updatedProduct.imageUrl" name = "newProduct.imageUrl"></label></div>
+            <button>Update</button>
+            <button (click)="onDelete(updatedProduct._id)">Delete</button>
+        </form>
+        <div *ngIf="errors" class="errors">
+                <p *ngIf="errors.title">{{errors.title.message}}</p>
+                <p *ngIf="errors.price">{{errors.price.message}}</p>
+            </div>
+    </div>

@@ -1,0 +1,16 @@
+
+<div class="main">
+    <h1>Create a New Product</h1>
+    <form (submit)="onCreate(newProduct)">
+        <div><label for="title">Title<input class="form-control" type="text" [(ngModel)]="newProduct.title" name = "newProduct.title"></label></div>
+        <div><label for="price">Price<input class="form-control" type="text" [(ngModel)]="newProduct.price" name = "newProduct.price"></label></div>
+        <div><label for="imageUrl">Image url<input class="form-control" type="text" [(ngModel)]="newProduct.imageUrl" name = "newProduct.imageUrl"></label></div>
+        <button>Create</button>
+        <button [routerLink]="['/products']">Cancel</button>
+        <br>
+    </form>
+    <div *ngIf="errors" class="errors">
+        <p *ngIf="errors.title">{{errors.title.message}}</p>
+        <p *ngIf="errors.price">{{errors.price.message}}</p>
+    </div>
+</div>
